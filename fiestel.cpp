@@ -23,7 +23,7 @@ void Encrypt(unsigned char &left,unsigned char &right,unsigned char key)
         //  Right[i+1] = Left[i] ^ RoundFunction(Right[i], key);
         unsigned char oldLeft = left;
         left = right;
-        right = oldLeft + RoundFunction(right, key);
+        right = oldLeft ^ RoundFunction(right, key);
 	}
 }
 
