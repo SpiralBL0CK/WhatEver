@@ -1,0 +1,25 @@
+
+global _0
+section .text
+_0:
+xor rax,rax
+
+push $rbp
+mov $rsp,$rbp
+sub $rsp,0x30
+MOV R0,a
+ADD R0,b
+MOV t1,R0
+SYSCALL
+
+MOV R0,c
+MUL R0,d
+MOV t2,R0
+MOV R0,t1
+SUB R0,t2
+MOV t,R0
+SYSCALL
+
+MOV R0,t
+MOV x,R0
+SYSCALL
